@@ -2,34 +2,38 @@
 
 Autonomous navigation system for the Pololu Romi robot using PID control and encoder feedback.
 
-This project was developed for robotics experimentation and competition environments.
+This project implements an embedded control system that enables a Romi robot to move autonomously using motor control, encoder feedback, and PID regulation.
 
 ## Problem
 
-Autonomous robots must navigate a predefined course without manual control. Reliable motion control requires precise motor regulation and feedback from encoders.
+Autonomous robots must navigate a predefined course without manual control. Reliable motion requires accurate motor control and feedback from sensors to maintain trajectory and correct errors.
 
 ## Solution
 
-This project implements a closed-loop control system using PID feedback to regulate motor speed and robot trajectory.
+This project implements a closed-loop control system using PID controllers to regulate motor behavior. Encoder feedback is used to track wheel motion and continuously adjust motor commands.
 
-Encoder feedback is used to estimate wheel movement and adjust motor commands in real time.
+The system enables the robot to perform controlled motion using embedded control logic.
 
 ## Architecture
 
-Sensors / Encoders  
+Encoder Feedback  
 ↓  
 PID Control Loop  
 ↓  
 Motor Commands  
 ↓  
-Robot Motion
+Robot Motion  
 
 ## Key Features
 
-- PID motor control
-- Encoder-based motion feedback
+- PID-based motor control
+- Encoder feedback for motion tracking
 - Embedded control loop implementation
 - Autonomous robot navigation logic
+
+## Hardware Platform
+
+Pololu Romi 32U4 robot platform.
 
 ## Tech Stack
 
@@ -38,8 +42,31 @@ C++
 Embedded Systems  
 Robotics Control  
 
-## Hardware Platform
-
-Pololu Romi 32U4 robot platform.
-
 ## Repository Structure
+
+romi-autonomous-navigation/
+├ README.md
+├ LICENSE
+├ .gitignore
+└ Romi_Code/
+   ├ Romi_Code.ino
+   ├ Chassis.cpp
+   ├ Chassis.h
+   ├ PIDcontroller.cpp
+   ├ PIDcontroller.h
+   ├ Pushbutton.cpp
+   ├ Pushbutton.h
+   ├ Timer.cpp
+   ├ Timer.h
+   ├ Romi32U4Motors.cpp
+   ├ Romi32U4Motors.h
+   ├ Romi32U4Encoders.cpp
+   ├ Romi32U4Buttons.h
+   ├ FastGPIO.h
+   ├ USBPause.h
+   ├ pcint.cpp
+   └ pcint.h
+
+## Notes
+
+This repository contains firmware and control components used for embedded robot navigation experiments on the Pololu Romi platform.
